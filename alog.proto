@@ -1,0 +1,68 @@
+package alog;
+
+// Request login
+//  client to server
+message LoginRequest {
+  optional string username = 1;
+  optional string password = 2;
+}
+
+// Response to login request
+//  server to client
+message LoginResponse {
+  optional uint32 result = 1;
+  optional string text = 2;
+}
+
+// Request list of known tasks
+//  client to server
+//
+// Used at client startup time to acquire the list of known tasks
+// which can then populate the dropdown and be used for
+// auto-completion.
+message TasksRequest {
+}
+
+// List of known task names
+//  server to client
+//
+// In response to the TasksRequest message, the server will send a
+// TasksReply, listing all known task names.  The client can thus
+// initialise its drop-down menu and auto-completion dictionary.
+message TasksResponse {
+  repeated string name = 1;
+}
+
+// Create a new journal entry
+//  client to server
+message JournalEntry {
+  optional string text = 1;
+}
+
+// Request update of current task
+//  server to client
+//
+// On receipt of this message, all clients should show their UI, and
+// solicit a task name from the user.  The UI should remain displayed
+// until a TaskUpdate message is received.
+message TaskRequest {
+}
+
+// Response to a TaskRequest
+//  client to server
+//
+// When the user selects a task from the UI, send this message to the
+// server.
+message TaskResponse {
+  optional string name = 1;
+}
+
+// Inform clients of current task
+//  server to client
+//
+// When a new task has been created, this message is sent to all
+// clients informing them of its existence.  Clients should hide their
+// UI when they receive this message.
+message TaskUpdate {
+  optional string name = 1;
+}
