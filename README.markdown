@@ -52,7 +52,7 @@ Server
 
 - The server will need special code to deal with iOS and Android
   clients, which won't be able to maintain an active TCP session.
-
+  - Try https://github.com/djacobs/PyAPNs
 
 Protocol
 --------
