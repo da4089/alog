@@ -37,6 +37,7 @@ Implementation
 - Write iOS client (ObjC+Cocoa)
 - Write Android client (Java)
 
+
 Server
 ------
 - loops, with timer every n minutes
@@ -49,6 +50,9 @@ Server
 - Use Twisted?  Or asyncio/trollius?  Or hand-rolled?
   - Need web server, SSL sockets for clients, plus timers
 
+- The server will need special code to deal with iOS and Android
+  clients, which won't be able to maintain an active TCP session.
+
 
 Protocol
 --------
@@ -57,8 +61,31 @@ Messages use protobuf marshalling.
 
 - LoginRequest (C->S)
 - LoginResponse (S->C)
-- GetKnownTasks (C->S)
+- TasksRequest (C->S)
+- TasksResponse (S->C)
 - JournalEntry (C->S)
-- CurrentTaskRequest (S->C)
-- CurrentTaskResponse (C->S)
-- CurrentTaskUpdate (S->C)
+- TaskRequest (S->C)
+- TaskResponse (C->S)
+- TaskUpdate (S->C)
+
+
+References
+----------
+protobuf language guide
+  https://developers.google.com/protocol-buffers/docs/proto
+
+protobuf Python tutorial
+  https://developers.google.com/protocol-buffers/docs/pythontutorial
+
+asyncio api
+  http://docs.python.org/3.4/library/asyncio.html
+
+trollius api
+  http://trollius.readthedocs.org/
+
+asyncio example
+  http://compiletoi.net/fast-scraping-in-python-with-asyncio.html
+
+asyncio PEPs
+  http://legacy.python.org/dev/peps/pep-3153/
+  http://legacy.python.org/dev/peps/pep-3156/
