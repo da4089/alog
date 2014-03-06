@@ -1,6 +1,6 @@
-wlog
-----
-A simple sampling work time recorder.
+alog
+====
+A simple sampling activity recorder.
 
 - Two components: server and client.
   - Server runs centrally, and records everything.
@@ -29,25 +29,32 @@ A simple sampling work time recorder.
   default to latest day, with options for any start/end dates.
 
 
-Use Python for server
-Write Linux client (Qt? Athena? Wx? Gtk?)
-Write OSX client (Qt? ObjC+Cocoa? Wx?)
-Write iOS client (ObjC+Cocoa)
-Write Android client (Java)
+Implementation
+--------------
+- Use Python for server
+- Write Linux client (Qt? Athena? Wx? Gtk?)
+- Write OSX client (Qt? ObjC+Cocoa? Wx?)
+- Write iOS client (ObjC+Cocoa)
+- Write Android client (Java)
 
-Connectivity from client to server is SSL, with HTTPS proxy option.
-Messages use protobuf marshalling.
-
-So server daemon
+Server
+------
 - loops, with timer every n minutes
 - pings all active clients, suggesting last task name
-- records response, if any
+- records response, if any, to local (Sqlite3?) database
 - if no response, records AFK
 - tells all clients to hide again
 - if new task, send to all clients
 
+- Use Twisted?  Or asyncio/trollius?  Or hand-rolled?
+  - Need web server, SSL sockets for clients, plus timers
+
 
 Protocol
+--------
+Connectivity from client to server is SSL, with HTTPS proxy option.
+Messages use protobuf marshalling.
+
 - LoginRequest (C->S)
 - LoginResponse (S->C)
 - GetKnownTasks (C->S)
@@ -55,5 +62,3 @@ Protocol
 - CurrentTaskRequest (S->C)
 - CurrentTaskResponse (C->S)
 - CurrentTaskUpdate (S->C)
- 
-
