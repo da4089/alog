@@ -37,6 +37,10 @@ A simple sampling activity recorder.
 - There's a command-line client to produce a time tracking report:
   default to latest day, with options for any start/end dates.
 
+See also
+- http://brettterpstra.com/projects/doing/
+- http://dayoneapp.com/
+
 
 Implementation
 --------------
