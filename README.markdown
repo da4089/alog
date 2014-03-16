@@ -16,12 +16,21 @@ A simple sampling activity recorder.
 - Every 15 minutes, server pings all clients, and they pop up a window
   asking what you've done for the last 15 minutes.
   - Time period is tunable.
-- First client to answer wins, and pops-down the other clients.
-- If no answer within a timeout, it'll record an "AFK" entry.
-- The default is what you said last time (sent by server).
-- You can change it to something else.
-- It does completion, so switching tasks is simple.
-- There's a drop-down list if you want that instead.
+  - First client to answer wins, and pops-down the other clients.
+  - If no answer within a timeout, it'll record an "AFK" entry.
+  - The default is what you said last time (sent by server).
+  - You can change it to something else.
+  - It does completion, so switching tasks is simple.
+  - There's a drop-down list if you want that instead.
+  - In the case of mobile clients, they won't be able to be always
+    connected.  So they should wake themselves up at the expected next
+    ping time, and record an entry if they get one.
+    - This applies to eg. laptops on planes too.
+    - Any number of disconnected entries can be recorded, and when
+      connection with the server is re-established, they can be
+      applied to the database.
+  - If no entry is entered within (configurable) 1 minute, all clients
+    should pop down.
 - Optional notes with each time entry too.  They're appended to the
   journal with a timestamp.
 - You can add a journal entry at any time.
@@ -32,7 +41,7 @@ A simple sampling activity recorder.
 Implementation
 --------------
 - Use Python for server
-- Write Linux client (Qt? Athena? Wx? Gtk?)
+- Write Linux client (Qt? Wx? Gtk?)
 - Write OSX client (Qt? ObjC+Cocoa? Wx?)
 - Write iOS client (ObjC+Cocoa)
 - Write Android client (Java)
