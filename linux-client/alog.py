@@ -146,6 +146,7 @@ class ActivityLogger(Frame):
 
         # Show window.
         self.parent.deiconify()
+        self.parent.lift()
 
         # Pop-down after a minute if not touched.
         self.parent.after(1000 * 60, self.do_timeout)
@@ -164,6 +165,9 @@ class ActivityLogger(Frame):
 
         # Schedule a reappearance.
         self.parent.after(int(s * 1000), self.do_show)
+
+        # Log.
+        print "Timed out with no data entry.  Sleeping for %f seconds." % s
         return
 
         
