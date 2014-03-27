@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ActivityLogger' target in the 'ActivityLogger' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

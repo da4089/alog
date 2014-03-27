@@ -1,6 +1,8 @@
+# Emacs backups
 *~
+
+# Python's generated files
 *.py[cod]
-*.so
 .Python
 env/
 bin/
@@ -18,3 +20,55 @@ var/
 *.egg
 pip-log.txt
 pip-delete-this-directory.txt
+
+# C/C++ generated files
+*.so
+*.o
+
+# Mac metadata and other cruft
+.DS_Store
+.Trashes
+*.swp
+*.lock
+
+# Xcode temporary files
+*~.nib
+
+# Xcode build files
+DerivedData/
+build/
+
+# .pbxuser:
+# http://lists.apple.com/archives/xcode-users/2004/Jan/msg00193.html
+*.pbxuser
+
+# .mode1v3:
+# http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
+*.mode1v3
+
+# .mode2v3:
+# http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
+*.mode2v3
+
+# .perspectivev3:
+# http://stackoverflow.com/questions/5223297/xcode-projects-what-is-a-perspectivev3-file
+*.perspectivev3
+
+# Whitelist the default ones, some projects need to use these
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+# Xcode 4 - semi-personal settings
+xcuserdata
+
+# Xcode 4 - Deprecated classes
+#
+# Allegedly, if you manually "deprecate" your classes, they get moved
+# here.
+#
+# We're using source-control, so this is a "feature" that we do not
+# want!
+*.moved-aside
+
