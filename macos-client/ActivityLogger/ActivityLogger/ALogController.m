@@ -9,7 +9,6 @@
 #import "ALogController.h"
 
 @implementation ALogController
-
 - (id)init
 {
     self = [super init];
@@ -17,6 +16,10 @@
         // Initialise here
     }
     
+    printf("Controller got init.\n");
+    
+    // Try to start window as modal
+    //[NSApp runModelForWindow];
     return self;
 }
 
@@ -28,12 +31,20 @@
 
 - (IBAction)cancel:(id) sender
 {
-    printf("Got cancel.\n");
+    printf("Controller got cancel.\n");
 }
 
 - (IBAction)ok:(id)sender
 {
-    printf("Got Ok.\n");
+    printf("Controller got ok.\n");
+    
+    // Hide window
+    //[taskWindow orderOut:self];
+    
+    char buf[200];
+    [[comboBox stringValue] getCString:buf maxLength:200 encoding:NSASCIIStringEncoding];
+    
+    printf("Combo text: %s\n", buf);
 }
 
 @end

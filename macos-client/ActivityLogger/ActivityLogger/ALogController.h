@@ -10,6 +10,7 @@
 
 @interface ALogController : NSObject {
     IBOutlet NSComboBox *comboBox;
+    IBOutlet NSWindow *taskWindow;
 }
 
 - (IBAction)ok:(id) sender;
