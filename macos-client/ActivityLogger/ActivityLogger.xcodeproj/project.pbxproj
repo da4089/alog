@@ -17,6 +17,7 @@
 		03EC891418E30834006AC24A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EC88F418E30833006AC24A /* Cocoa.framework */; };
 		03EC891C18E30834006AC24A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03EC891A18E30834006AC24A /* InfoPlist.strings */; };
 		03EC891F18E30834006AC24A /* ActivityLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC891E18E30834006AC24A /* ActivityLoggerTests.m */; };
+		03EC892D18E685D9006AC24A /* ALogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EC892C18E685D9006AC24A /* ALogController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		03EC891B18E30834006AC24A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03EC891D18E30834006AC24A /* ActivityLoggerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityLoggerTests.h; sourceTree = "<group>"; };
 		03EC891E18E30834006AC24A /* ActivityLoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityLoggerTests.m; sourceTree = "<group>"; };
+		03EC892B18E685D9006AC24A /* ALogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALogController.h; sourceTree = "<group>"; };
+		03EC892C18E685D9006AC24A /* ALogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALogController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 		03EC88FA18E30833006AC24A /* ActivityLogger */ = {
 			isa = PBXGroup;
 			children = (
+				03EC892B18E685D9006AC24A /* ALogController.h */,
+				03EC892C18E685D9006AC24A /* ALogController.m */,
 				03EC890618E30833006AC24A /* AppDelegate.h */,
 				03EC890718E30833006AC24A /* AppDelegate.m */,
 				03EC890918E30833006AC24A /* MainMenu.xib */,
@@ -263,6 +268,7 @@
 			files = (
 				03EC890118E30833006AC24A /* main.m in Sources */,
 				03EC890818E30833006AC24A /* AppDelegate.m in Sources */,
+				03EC892D18E685D9006AC24A /* ALogController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
