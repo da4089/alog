@@ -13,7 +13,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    printf("AppDelegate for applicationDidFinishLaunching.\n");
+    NSLog(@"AppDelegate for applicationDidFinishLaunching.\n");
 }
 
 @end

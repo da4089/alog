@@ -16,7 +16,7 @@
         // Initialise here
     }
     
-    printf("Controller got init.\n");
+    NSLog(@"Controller got init.\n");
     
     // Try to start window as modal
     //[NSApp runModelForWindow];
@@ -29,22 +29,29 @@
     // this is flagged as an issue with ARC: [super dealloc];
 }
 
+
+- (void)awakeFromNib
+{
+    NSLog(@"Controller got awakeFromNib.\n");
+}
+
+
 - (IBAction)cancel:(id) sender
 {
-    printf("Controller got cancel.\n");
+    NSLog(@"Controller got cancel.\n");
 }
+
 
 - (IBAction)ok:(id)sender
 {
-    printf("Controller got ok.\n");
+    NSLog(@"Controller got ok.\n");
     
     // Hide window
     //[taskWindow orderOut:self];
+    //char buf[200];
+    //[[comboBox stringValue] getCString:buf maxLength:200 encoding:NSASCIIStringEncoding];
     
-    char buf[200];
-    [[comboBox stringValue] getCString:buf maxLength:200 encoding:NSASCIIStringEncoding];
-    
-    printf("Combo text: %s\n", buf);
+    NSLog(@"Combo text: %@\n", [comboBox stringValue]);
 }
 
 @end
