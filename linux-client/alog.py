@@ -3,7 +3,7 @@
 ########################################################################
 
 import time
-from Tkinter import BOTH, RIGHT, LEFT, StringVar, Text, TOP, Tk, X, Y
+from Tkinter import BOTH, RIGHT, LEFT, StringVar, Text, TOP, Tk, X
 from ttk import Button, Combobox, Frame, Style
 
 
@@ -34,18 +34,18 @@ class ActivityLogger(Frame):
         bits = time.localtime(now)
 
         m = (bits.tm_hour * 60) + bits.tm_min
-        used = m % self.interval
+        #used = m % self.interval
         start = (m / self.interval) * self.interval
-        next = start + self.interval
+        next_time = start + self.interval
 
         t = time.mktime((bits.tm_year, bits.tm_mon, bits.tm_mday,
-                         next / 60, next % 60, 0,
+                         next_time / 60, next_time % 60, 0,
                          0, 0, 0))
         s = t - now
 
         print "Time now is %u:%02u:%02u" % (bits.tm_hour, bits.tm_min, bits.tm_sec)
         print "Interval started at %u:%02u:00" % (start / 60, start % 60)
-        print "Next interval starts at %u:%02u:00" % (next / 60, next % 60)
+        print "Next interval starts at %u:%02u:00" % (next_time / 60, next_time % 60)
         print "Sleeping for %f seconds" % s
 
         return s
