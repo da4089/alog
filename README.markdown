@@ -2,6 +2,8 @@ alog
 ====
 A simple sampling activity recorder.
 
+[![Code Health](https://landscape.io/github/da4089/alog/master/landscape.svg?style=flat)](https://landscape.io/github/da4089/alog/master)
+
 - Two components: server and client.
   - Server runs centrally, and records everything.
   - Clients can run anywhere, and more than one of them.
